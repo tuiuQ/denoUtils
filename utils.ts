@@ -72,6 +72,11 @@ export default class Utils {
 		}
 	}
 
+	static async writeFile(path: string, content: string) {
+		const encoder = new TextEncoder();
+		await Deno.writeFile(path, encoder.encode(content));
+	}
+
 	// 获取指定路经下的所有文件
 	/**
 	 * 获取指定路径下的所有文件（包括子目录）
